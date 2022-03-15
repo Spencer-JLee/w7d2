@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to user_url(@user)
     else
-      
+      render :new
     end
   end
 

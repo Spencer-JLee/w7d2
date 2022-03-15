@@ -1,0 +1,15 @@
+<ul>
+  <li>
+    <%= band.name  %>
+  </li>
+
+  <% if action == :show %>
+    <li>
+      <a href="<%= bands_url %>">Band Index</a>
+    </li>
+  <% else %>
+    <li>
+      <a href="<%= band_url(@band) %>">Band Show Page</a>
+    </li>
+  <% end %>
+</ul>

@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  before_action :require_logged_in
   def show
     @album = Album.find(params[:id])
 
@@ -43,7 +44,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album = Album.find(params[:id])
     @album.destroy
-    redirect_to :new
+    redirect_to bands_url
   end
 
   private

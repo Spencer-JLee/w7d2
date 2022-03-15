@@ -9,5 +9,12 @@ Rails.application.routes.draw do
     end
     resources :albums, only: [:create, :edit, :show, :update, :destroy]
   end
+
+  MusicApp::Application.routes.draw do
+    resources :albums do
+      resources :tracks, only: :new
+    end
+    resources :tracks, only: [:create, :edit, :show, :update, :destroy]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

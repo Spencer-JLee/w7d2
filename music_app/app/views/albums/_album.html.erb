@@ -1,0 +1,29 @@
+<ul>
+  <li>
+    <%= album.title  %>
+  </li>
+  <li>
+    <%= album.year  %>
+  </li>
+  <li>
+    <% if album.title == true %>
+      <%= "Live Album" %>
+    <% else %>
+      <%= "Studio Album" %>
+    <% end %>
+  </li>
+  <li>
+    <% band = Band.where(id: params[:band_id]) %>
+    <%= band %>
+  </li>
+
+  <% if action == :show %>
+    <li>
+      <a href="<%= new_band_album %>">Create a New Album</a>
+    </li>
+  <% else %>
+    <li>
+      <a href="<%= album_url(@album) %>">Album Show Page</a>
+    </li>
+  <% end %>
+</ul>

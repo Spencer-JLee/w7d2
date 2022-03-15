@@ -5,9 +5,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    # debugger
     @user = User.find(params[:id])
 
     if @user
+      # debugger
       render :show
     else
       render :index
